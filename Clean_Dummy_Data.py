@@ -25,7 +25,7 @@ file.drop_duplicates(inplace = True)
 ## print the file to check the changes
 print(file)
 
-#email validation and add a new column to shoe the result True/False
+#email validation and add a new column to show the result True/False
 email_regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
 file["is_valid_email"] = file["email"].str.fullmatch(email_regex) \
                             .map({True: "TRUE", False: "FALSE"})
@@ -39,4 +39,5 @@ file.columns=file.columns.str.upper()
 print(file)
 
 ## Save the cleaned data into another file
+
 file.to_csv('updated_practice.csv', index = False)
